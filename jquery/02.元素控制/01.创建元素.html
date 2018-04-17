@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+
+        #container {
+
+            width: 600px; height: 500px;
+            background-color: lightblue;
+
+        }
+
+        .items {
+            width: 400px; height: 60px; margin: 0 auto; margin-top: 10px;
+            background-color: lightpink;
+        }
+
+        .border {
+            border: #F08080 1px solid;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <input id="name">
+    <input id="msg">
+
+    <input id="btn" value="send" type="button">
+
+    <hr>
+
+    <div id="container">
+
+        <div class="items">
+
+            <div>name</div>
+            <div>msg</div>
+        </div>
+        <div class="items">
+
+            <div>name</div>
+            <div>msg</div>
+        </div>
+        <div class="items">
+
+            <div>name</div>
+            <div>msg</div>
+        </div>
+
+    </div>
+
+
+</body>
+</html>
+<script src="../../resources/jquery.js"></script>
+
+<script>
+
+$(function () {
+
+    $("#btn").click(function () {
+
+       var name = $("#name")
+       var msg = $("#msg")
+
+        
+       var items = $('<div>\n' +
+           '\n' +
+           '            <div>'+name.val()+'</div>\n' +
+           '            <div>'+msg.val()+'</div>\n' +
+           '        </div>') ;
+
+       items.addClass('items').addClass('border').attr('haha' , 'heihei')
+       $("#container").append(items);
+
+    })
+
+
+})
+
+
+</script>

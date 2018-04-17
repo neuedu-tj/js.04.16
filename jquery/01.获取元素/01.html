@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+    <style>
+
+        #d1 {
+
+            height: 50px; width: 50px; background-color: darkorange;  margin: 10px;
+        }
+
+        .d2 {
+            height: 50px; width: 50px; background-color: #20B2AA;  margin: 10px;
+        }
+        
+        #container {
+            height: 200px; width: 200px; background-color: lightblue;
+        }
+
+        #container div {
+            height: 50px; width: 50px; background-color: lightcoral;  margin: 10px;
+        }
+        
+
+    </style>
+
+
+</head>
+<body>
+
+    <div id="d1">spring-cloud</div>
+
+    <div class="d2"></div>
+    <div class="d2"></div>
+    <div class="d2"></div>
+
+    <hr>
+
+    <input type="button" id="changeWidth" value="change width">
+    
+    <div id="container">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+
+    <hr>
+
+    <input type="button" id="getSelected" value="getSelected">
+
+    <input type="checkbox" name="skills" value="java">java
+    <input type="checkbox" name="skills" value="oracle">oracle
+    <input type="checkbox" name="skills" value="css">css
+
+
+
+
+</body>
+</html>
+
+<script src="../../resources/jquery.js"></script>
+<script>
+
+    $(function () {
+
+        $("#d1").html("something") ;
+
+        $(".d2").css('background-color' , 'red').css('border-radius' , '10px')
+
+        $("#changeWidth").click(function () {
+            $("#container div").css('width' , '100px')
+        })
+
+        $("#getSelected").click(function () {
+
+            var skills = $("input[name=skills]:checked");  //jquery
+
+            $.each(skills , function (index ,e) {       // skills.forEach() // es6提供的 foreach 解析不了 skills , 应用jq 的 $.each 方法
+                console.log($(this).val())
+            })
+
+
+
+        })
+
+
+    })
+
+
+
+</script>
