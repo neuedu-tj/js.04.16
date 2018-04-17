@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>event</title>
+
+    <style>
+
+        #parent {
+            height: 200px; width: 200px;
+            background-color: aquamarine;
+        }
+
+        #sub {
+            height: 100px; width: 100px;
+            background-color: lightcoral;
+        }
+
+    </style>
+
+</head>
+<body>
+
+
+
+    <div id="parent">
+
+        <div id="sub"></div>
+
+    </div>
+    <hr>
+
+    <a id="a1" href="http://www.baidu.com">百度</a>
+
+
+</body>
+</html>
+
+
+<script>
+
+
+    window.onload = function () {
+
+        var parent = document.getElementById("parent");
+
+        parent.onclick = function (e) {
+            // alert("parent --- click ")
+            console.log(e.button)
+            e.preventDefault();
+
+        }
+
+
+        var sub = document.getElementById("sub");
+        sub.onclick = function (e) {
+            alert("sub----  click")
+            e.stopPropagation();  //阻止事件传递 .
+        }
+
+
+        var a1 = document.getElementById("a1");
+        a1.onclick = function (e) {
+            alert("a -----   click")
+            e.preventDefault();   //阻止 元素的默认行为 . 
+        }
+
+
+
+
+    }
+
+
+    window.onkeydown = function (e) {
+        console.log("code : " + e.keyCode)
+    }
+
+
+
+</script>
