@@ -32,25 +32,19 @@
 
     <input id="btn" value="send" type="button">
 
+    <input id="find" value="找邻居" type="button">
+
     <hr>
 
     <div id="container">
+        <div class="items"><div>spring1</div><div>xxxx</div><div class="remove">×</div></div>
+        <div class="items"><div>spring2</div><div>xxxx</div><div class="remove">×</div></div>
 
-        <div class="items">
+        <div class="items" id="target"><div>oracle</div><div>yyyy</div><div class="remove">×x</div></div>
 
-            <div>name</div>
-            <div>msg</div>
-        </div>
-        <div class="items">
-
-            <div>name</div>
-            <div>msg</div>
-        </div>
-        <div class="items">
-
-            <div>name</div>
-            <div>msg</div>
-        </div>
+        <div class="items"><div>redis1</div><div>zzzz</div><div class="remove">×xx</div></div>
+        <div class="items"><div>redis2</div><div>zzzz</div><div class="remove">×xx</div></div>
+        <div class="items"><div>redis3</div><div>zzzz</div><div class="remove">×xx</div></div>
 
     </div>
 
@@ -75,8 +69,29 @@ $(function () {
            '            <div>'+msg.val()+'</div>\n' +
            '        </div>') ;
 
-       items.addClass('items').addClass('border').attr('haha' , 'heihei')
-       $("#container").append(items);
+       var remove = $('<div class="remove">删除</div>');
+       remove.click(function () {
+           $(this).parent().remove();
+       })
+
+       items.append(remove);
+
+       items.addClass('items') //.addClass('border').attr('haha' , 'heihei')
+       // $("#container").append(items);
+       $("#container").prepend(items)
+
+    })
+
+
+    $(".remove").click(function () {
+        $(this).parent().remove();
+    })
+
+
+    $("#find").click(function () {
+
+        console.log($("#target").prev()[0])
+        console.log($("#target").nextAll())
 
     })
 

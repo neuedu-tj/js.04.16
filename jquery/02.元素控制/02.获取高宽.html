@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+
+        #container {
+
+            width: 700px; height: 600px;
+
+            margin: 10px; padding: 10px;
+
+            background-color: lightblue;
+
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: flex-end;
+
+        }
+
+        .item {
+            width: 100px;
+            background-color: #F08080;
+            margin-left: 10px;
+
+        }
+
+
+    </style>
+
+</head>
+<body>
+
+
+
+    <div id="container" class="border">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+
+
+</body>
+</html>
+<script src="../../resources/jquery.js"></script>
+
+<script>
+
+$(function () {
+
+   // console.log($("#container").outerHeight(true))
+
+    $(".item:eq(0)").height(200);
+    $(".item:eq(1)").height(500);
+
+    $(".item:eq(2)").height(400);
+    $(".item:eq(3)").height(300);
+
+
+})
+
+
+</script>

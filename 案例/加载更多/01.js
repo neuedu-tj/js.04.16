@@ -5,21 +5,16 @@ var messages =[];
 
 $(function () {
 
-
     $.getJSON("data/message.json" , function (results) {
         messages = results;
 
-
         var arr = messages.slice((step-1) , step+4-1);
-
-
+        
         createItem(arr);
 
     });
 
     function createItem(arr) {           //根据传入的数组内容   去渲染 item
-
-
 
         arr.forEach(function (e) {
 
@@ -57,8 +52,6 @@ $(function () {
                 step += 4;
             }, 0)
 
-
-            
         }
 
     })
